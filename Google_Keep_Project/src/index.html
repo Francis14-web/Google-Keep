@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500&display=swap">
+    </link>
+    <link rel="stylesheet" href="../dist/styles.css">
+    <title>Google Keep</title>
+</head>
+
+<body class="bg-white text-[#202124] text-base m-0 p-0 min-w-[360px] overflow-x-hidden overflow-y-auto font-sans">
+    <div id="modal" class="fixed left-0 top-0 w-full h-full b z-50 bg-gray-300 bg-opacity-50 opacity-0 hidden transform scale-110 transition visibility-0 linear delay-250 opacity-250 transform-250">
+        <div id="modal-content" class="absolute left-2/4 top-2/4 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 rounded-lg py-4 px-7">
+            <input id="modal-title" type="text" class="w-[calc(100% - 10px)] min-h-[43px] mx-1.5 focus:outline-none font-medium leading-6 tracking-[0.00625em] border-0 overflow-hidden relative text-lg pb-3 pt-4" placeholder="Title">
+            <input id="modal-text" type="text" class="w-[calc(100% - 10px)] min-h-[43px] mx-1.5 p-2 text-base font-medium leading-6 tracking-[0.00625em] border-0 overflow-hidden relative text-[#202124]" placeholder="Take a note...">
+            <span id="modal-close-button" class="float-right my-[0.2em] box-border text-red-700 overflow-hidden overflow-ellipsis whitespace-nowrap tracking-[0.01785714em] text-base font-medium leading-[1.25rem] h-9 py-2 px-6 rounded-md bg-white cursor-pointer">Close</span>
+        </div>
+    </div>
+
+
+
+    <main class="mx-auto max-w-4xl">
+        <header class="flex items-center justify-center mt-[32px]">
+            <img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" id="haeder-logo" alt="" class="h-16">
+            <h2 id="header-title" class="text-[#5f6368] text-[32px] pt-1 pl-1 font-bold">
+                Keep
+            </h2>
+        </header>
+
+        <div id="form-container" class="rounded-lg border border-gray-300 shadow-md mx-auto my-32 md:my-16 max-w-screen-md transition duration-200 ease-in transform hover:shadow-lg">
+            <form id="form" autocomplete="off"  class="relative border-transparent rounded-lg transition duration-200 ease-in">
+                <input type="text" id="note-title" placeholder="Title" class="hidden w-full focus:outline-none min-h-43 mx-1 px-2.5 py-2.5  text-base font-medium leading-6 border-0">
+                <input type="text" id="note-text" placeholder="Take a note..." class="w-full focus:outline-none h-43 min-h-43 mx-1 px-2.5 py-2.5 text-base font-medium leading-6 tracking-tighter border-0  overflow-hidden relative">
+                <div id="form-buttons" class="hidden text-right mx-2">
+                    <button type="submit" class="my-1 box-border overflow-hidden truncate whitespace-nowrap tracking-tighter text-sm font-medium leading-5 h-9 px-6 rounded-md border text-white bg-[#007bff] hover:brightness-95" id="submit-btn">Submit</button>
+                    <button type="button" class="my-1 box-border text-black overflow-hidden truncate whitespace-nowrap tracking-tighter text-sm font-medium leading-5 h-9 px-6 rounded-md border bg-gray-100 hover:brightness-95" id="form-close-button">Close</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="notes" class="flex flex-wrap gap-2 justify-center">
+
+        </div>
+        <div id="placeholder" class="mt-[10vh] flex items-center flex-col">
+            <img id="placeholder-logo" class="h-[120px] w-[120px] m-5 opacity-10 ">
+            <p id="placeholder-text" class="text-[#80868b] cursor-default text-2xl font-normal leading-8">Notes you add appear here</p>
+        </div>
+
+        <div id="color-tooltip" class="border-b-2 border-white absolute top-10 bg-white left-0 z-20 rounded-md hidden shadow-md py-1 pr-2 pl-0.5 w-[136px] h-10 justify-between">
+            <div class="color-option h-6 w-6 rounded-full border border-gray-300 bg-white hover:border hover:border-black" data-color="#fff" id="white"></div>
+            <div class="color-option h-6 w-6 rounded-full border border-gray-300 bg-purple-300 hover:border hover:border-black" data-color="#d7aefb" id="purple"></div>
+            <div class="color-option h-6 w-6 rounded-full border border-gray-300 bg-yellow-500 hover:border hover:border-black" data-color="#fbbc04" id="orange"></div>
+            <div class="color-option h-6 w-6 rounded-full border border-gray-300 bg-teal-200 hover:border hover:border-black" data-color="#a7ffeb" id="teakl"></div>
+        </div>
+    </main>
+
+    <script src="index.js">
+
+    </script>
+</body>
+
+</html>
